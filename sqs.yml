@@ -5,7 +5,7 @@ Resources:
   MyQueue:
     Type: AWS::SQS::Queue
     Properties:
-      QueueName:
+     QueueName:
         Fn::Join:
         - ''
         - - SampleQueue-
