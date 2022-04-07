@@ -23,7 +23,7 @@ phases:
       - echo AWS_ACCESS_KEY_ID
       - echo AWS_SECRET_ACCESS_KEY
       # - taskcat test run --no-delete
-      - taskcat test run -k
+      - taskcat test run -k -d
 #      - taskcat test run &> screen-logs.txt &
   post_build:
     commands:
