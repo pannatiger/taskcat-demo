@@ -15,8 +15,8 @@ phases:
     commands:
       - echo Build phase started on `date`
       # - taskcat test run --no-delete
-      # - taskcat test run -k
-      - taskcat test run &> screen-logs.txt &
+      - taskcat test run -k
+#      - taskcat test run &> screen-logs.txt &
   post_build:
     commands:
       - echo Build completed on `date`
