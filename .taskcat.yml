@@ -3,7 +3,6 @@ project:
   regions:
     - eu-west-1
     - us-east-1
-  role_name: devAssumeRole
 tests:
   sqs-test:
     template: ./sqs.yml

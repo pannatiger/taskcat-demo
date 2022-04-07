@@ -11,15 +11,17 @@ phases:
       - pip install --upgrade pip
       - pip3 install taskcat
       - pip3 install --upgrade taskcat
-#      - ASSUME_ROLE_ARN="arn:aws:iam::720609190984:role/cloudformation-role"
-#      - TEMP_ROLE=$(aws sts assume-role --role-arn $ASSUME_ROLE_ARN --role-session-name test)
-#      - export TEMP_ROLE
-#      - export AWS_ACCESS_KEY_ID=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.AccessKeyId')
-#      - export AWS_SECRET_ACCESS_KEY=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SecretAccessKey')
-#      - export AWS_SESSION_TOKEN=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SessionToken')
+      - ASSUME_ROLE_ARN="arn:aws:iam::720609190984:role/cloudformation-role"
+      - TEMP_ROLE=$(aws sts assume-role --role-arn $ASSUME_ROLE_ARN --role-session-name test)
+      - export TEMP_ROLE
+      - export AWS_ACCESS_KEY_ID=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.AccessKeyId')
+      - export AWS_SECRET_ACCESS_KEY=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SecretAccessKey')
+      - export AWS_SESSION_TOKEN=$(echo "${TEMP_ROLE}" | jq -r '.Credentials.SessionToken')
   build:
     commands:
       - echo Build phase started on `date`
+      - echo AWS_ACCESS_KEY_ID
+      - echo AWS_SECRET_ACCESS_KEY
       # - taskcat test run --no-delete
       - taskcat test run -k
 #      - taskcat test run &> screen-logs.txt &
