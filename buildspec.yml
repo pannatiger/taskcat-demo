@@ -5,10 +5,6 @@ phases:
       python: 3.7
     commands:
       - echo install phase started on `date`
-      - python --version
-      - 'curl -O https://bootstrap.pypa.io/get-pip.py'
-      - python3 get-pip.py
-      - pip install --upgrade pip
       - pip3 install taskcat
       - pip3 install --upgrade taskcat
       - ASSUME_ROLE_ARN="arn:aws:iam::720609190984:role/cloudformation-role"
