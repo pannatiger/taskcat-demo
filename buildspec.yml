@@ -16,7 +16,9 @@ phases:
   build:
     commands:
       - echo Build phase started on `date`
-      - taskcat test run
+      - taskcat test run -l
+      - ls -1 taskcat_outputs
+      - ls -1 taskcat_outputs | while read LOG; do cat taskcat_outputs/$LOG; done
 #      - taskcat test run &> screen-logs.txt &
   post_build:
     commands:
