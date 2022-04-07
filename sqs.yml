@@ -4,8 +4,7 @@ Description: Creates an SQS Queue.
 Resources:
   MyQueue:
     Type: AWS::SQS::Queue
-    Properties:
-     QueueName:
+    Properties: QueueName:
         Fn::Join:
         - ''
         - - SampleQueue-
